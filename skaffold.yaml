@@ -1,0 +1,26 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+build:
+  googleCloudBuild:
+    projectId: hyhaus-dev
+  artifacts:
+    - image: asia.gcr.io/hyhaus-dev/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.js'
+            dest: .
+    - image: asia.gcr.io/hyhaus-dev/backend
+      context: backend
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.ts'
+            dest: .
