@@ -6,10 +6,13 @@ deploy:
       - ./infra/k8s/*
       - ./infra/k8s-dev/*
 build:
-  googleCloudBuild:
-    projectId: hyhaus-dev
+  local:
+    push: false
+  # googleCloudBuild:
+  #   projectId: hyhaus-dev
   artifacts:
-    - image: asia.gcr.io/hyhaus-dev/client
+    - image: aidenhsy/client
+      # - image: asia.gcr.io/hyhaus-dev/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -17,7 +20,8 @@ build:
         manual:
           - src: 'src/**/*.js'
             dest: .
-    - image: asia.gcr.io/hyhaus-dev/backend
+    - image: aidenhsy/backend
+      # - image: asia.gcr.io/hyhaus-dev/backend
       context: backend
       docker:
         dockerfile: Dockerfile

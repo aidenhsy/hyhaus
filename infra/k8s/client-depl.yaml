@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: client
-          image: asia.gcr.io/hyhaus-dev/client
+          image: aidenhsy/client
+          # image: asia.gcr.io/hyhaus-dev/client
 ---
 apiVersion: v1
 kind: Service

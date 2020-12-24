@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: backend
-          image: asia.gcr.io/hyhaus-dev/backend
+          image: aidenhsy/backend
+          # image: asia.gcr.io/hyhaus-dev/backend
 ---
 apiVersion: v1
 kind: Service
