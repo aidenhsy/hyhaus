@@ -4,6 +4,15 @@ import Photo from '../models/Photo.js';
 
 const router = express.Router();
 
+const sample = [
+  {
+    name: 'name1',
+  },
+  {
+    name: 'name2',
+  },
+];
+
 router.get(
   '/',
   asyncHandler(async (req, res) => {
