@@ -16,7 +16,7 @@ const LandingScreen = () => {
 
   return (
     <div>
-      {[...new Array(180)]
+      {[...new Array(100)]
         .map(
           () => `Cras mattis consectetur purus sit amet fermentum.
 Cras justo odio, dapibus ac facilisis in, egestas eget quam.
