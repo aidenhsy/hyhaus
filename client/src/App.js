@@ -5,6 +5,7 @@ import { ThemeProvider } from '@material-ui/styles';
 
 import theme from './components/Theme';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 import LandingScreen from './screens/LandingScreen';
 
@@ -12,8 +13,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <Container>
-          <Header />
+        <Header />
+        <Container style={{ minHeight: '80vh' }}>
           <Switch>
             <Route path="/" component={LandingScreen} exact />
             <Route path="/hire" component={() => <div>Hire</div>} exact />
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/logout" component={() => <div>Log out</div>} exact />
           </Switch>
         </Container>
+        <Footer />
       </ThemeProvider>
     </BrowserRouter>
   );
