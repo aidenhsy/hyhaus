@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       right: '15em',
     },
+    alignItems: 'center',
   },
 }));
 
