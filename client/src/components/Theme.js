@@ -2,6 +2,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 const purplepink = '#F04393';
 const yellow = '#F9C449';
+const arcGrey = '#3A3B3C';
 
 export default createMuiTheme({
   palette: {
@@ -25,11 +26,13 @@ export default createMuiTheme({
     },
     h2: {
       fontFamily: 'Raleway',
+      color: arcGrey,
       fontWeight: 700,
     },
     subtitle1: {
       fontFamily: 'Raleway',
       fontSize: '1.2rem',
+      color: arcGrey,
       fontWeight: 400,
     },
   },
