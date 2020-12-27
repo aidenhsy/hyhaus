@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     background: theme.palette.common.yellow,
     width: '100%',
-    height: '250px',
   },
   mainContainer: {
     position: 'absolute',
