@@ -9,9 +9,9 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: theme.palette.common.yellow,
-    minHeight: '250px',
+    background: theme.palette.common.yellow,
     width: '100%',
+    height: '250px',
   },
   mainContainer: {
     position: 'absolute',
