@@ -23,5 +23,14 @@ export default createMuiTheme({
       fontWeight: '700',
       fontSize: '0.9rem',
     },
+    h2: {
+      fontFamily: 'Raleway',
+      fontWeight: 700,
+    },
+    subtitle1: {
+      fontFamily: 'Raleway',
+      fontSize: '1.2rem',
+      fontWeight: 400,
+    },
   },
 });

@@ -14,7 +14,7 @@ const App = () => {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <Header />
-        <Container style={{ minHeight: '80vh' }}>
+        <Container style={{ minHeight: '120vh' }}>
           <Switch>
             <Route path="/" component={LandingScreen} exact />
             <Route path="/hire" component={() => <div>Hire</div>} exact />

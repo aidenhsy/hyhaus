@@ -1,7 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid } from '@material-ui/core';
+
+import PhotoCard from '../components/PhotoCard';
+import MainBlock from '../components/MainBlock';
+
+const useStyles = makeStyles((theme) => ({
+  containerOne: {
+    marginTop: '4rem',
+  },
+}));
 
 const LandingScreen = () => {
+  const classes = useStyles();
+
+  //data fetcing
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
@@ -15,16 +29,14 @@ const LandingScreen = () => {
   console.log(photos);
 
   return (
-    <div>
-      {[...new Array(100)]
-        .map(
-          () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-        )
-        .join('\n')}
-    </div>
+    <Grid container direction="column" className={classes.mainContainer}>
+      <Grid item>
+        <MainBlock />
+      </Grid>
+      <Grid item>
+        <PhotoCard />
+      </Grid>
+    </Grid>
   );
 };
 
