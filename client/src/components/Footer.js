@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Hidden } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
+import footerAdornment from '../assets/Footer Adornment.svg';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -11,6 +12,16 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     background: theme.palette.common.yellow,
     width: '100%',
+  },
+  adornment: {
+    width: '25em',
+    verticalAlign: 'bottom',
+    [theme.breakpoints.down('md')]: {
+      width: '21em',
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '15em',
+    },
   },
   mainContainer: {
     position: 'absolute',
@@ -49,6 +60,11 @@ const Footer = () => {
   const classes = useStyles();
   return (
     <footer className={classes.footer}>
+      <img
+        alt="purple decorative slash"
+        src={footerAdornment}
+        className={classes.adornment}
+      />
       <Hidden mdDown>
         <Grid container justify="center" className={classes.mainContainer}>
           <Grid item className={classes.gridItem}>
