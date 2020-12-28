@@ -36,4 +36,14 @@ export default createMuiTheme({
       fontWeight: 400,
     },
   },
+  overrides: {
+    MuiInput: {
+      underline: {
+        '&:before': {},
+        '&:hover:not($disabled):not($focused):not($error):before': {
+          borderBottom: `2px solid ${purplepink}`,
+        },
+      },
+    },
+  },
 });

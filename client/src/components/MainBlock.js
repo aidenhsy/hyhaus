@@ -7,6 +7,7 @@ import {
   useTheme,
   Hidden,
 } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import backgroudImage from '../assets/backgroudImage.png';
 
@@ -27,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Roboto',
     border: 'none',
     fontSize: '1rem',
+    '&:hover': {
+      backgroundColor: theme.palette.primary.light,
+    },
   },
   title: {
     marginBottom: '1.4rem',
@@ -48,7 +52,12 @@ const MainBlock = () => {
           Hyhaus is the leading destination to find & showcase photographies and
           home to the China's best photographers.
         </Typography>
-        <Button variant="outlined" className={classes.signupButton}>
+        <Button
+          variant="outlined"
+          component={Link}
+          to="/signin"
+          className={classes.signupButton}
+        >
           Sign up
         </Button>
       </Grid>
