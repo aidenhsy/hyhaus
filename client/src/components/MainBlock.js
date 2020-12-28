@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     marginBottom: '1.4rem',
-    marginTop: '4rem',
+    marginTop: '5rem',
   },
 }));
 
@@ -42,10 +42,19 @@ const MainBlock = () => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
+  const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesLG = useMediaQuery(theme.breakpoints.down('lg'));
   return (
     <Grid container direction="row" className={classes.root}>
-      <Grid item style={{ textAlign: matchesSM ? 'center' : undefined }} md={6}>
-        <Typography variant="h2" className={classes.title}>
+      <Grid
+        item
+        style={{
+          textAlign: matchesSM ? 'center' : undefined,
+          paddingLeft: matchesSM ? undefined : matchesMD ? '2em' : '5em',
+        }}
+        md={6}
+      >
+        <Typography variant="h4" className={classes.title}>
           Discover China's top photographers
         </Typography>
         <Typography variant="subtitle1" style={{ marginBottom: '1.4rem' }}>
@@ -62,7 +71,14 @@ const MainBlock = () => {
         </Button>
       </Grid>
       <Hidden smDown>
-        <Grid item md={6}>
+        <Grid
+          item
+          md={6}
+          align="right"
+          style={{
+            paddingRight: matchesMD ? '5em' : matchesLG ? '10em' : '1em',
+          }}
+        >
           <img
             alt="mainBlockIcon"
             className={classes.backgroundImage}
