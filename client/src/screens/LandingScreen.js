@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 
 import MainBlock from '../components/MainBlock';
+import PhotoBlock from '../components/PhotoBlock';
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {},
@@ -11,22 +11,12 @@ const useStyles = makeStyles((theme) => ({
 
 const LandingScreen = () => {
   const classes = useStyles();
-  const [photos, setPhotos] = useState([]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const { data } = await axios.get('/api/photos');
-      setPhotos(data);
-    };
-    fetchProducts();
-  }, []);
-
-  console.log(photos);
 
   return (
     <Grid container direction="column" className={classes.mainContainer}>
       <Grid item>
         <MainBlock />
+        <PhotoBlock />
       </Grid>
     </Grid>
   );
