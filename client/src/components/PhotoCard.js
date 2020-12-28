@@ -31,13 +31,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PhotoCard = () => {
+const PhotoCard = ({ photo }) => {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
       <CardMedia
         className={classes.cardMedia}
-        image="https://petapixel.com/assets/uploads/2017/11/finger-800x600.jpg"
+        image={photo.image}
         title="Paella dish"
       />
       <CardActions>
@@ -45,7 +45,7 @@ const PhotoCard = () => {
           avatar={
             <Avatar
               alt="Remy Sharp"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy9KtAZaHVOs0UUmGsYOrvaTRYBWF5yylw4Q&usqp=CAU"
+              src={photo.authorImage}
               className={classes.avatar}
               component={Link}
               to="/profile/meganli"
@@ -53,7 +53,7 @@ const PhotoCard = () => {
           }
           title={
             <Link to="/profile/meganli" style={{ color: 'black' }}>
-              Megan Li
+              {photo.author}
             </Link>
           }
           subheader="September 14, 2021"

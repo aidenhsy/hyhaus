@@ -15,18 +15,19 @@ const App = () => {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <Header />
-
-        <Switch>
-          <Route path="/" component={LandingScreen} exact />
-          <Route path="/signin" component={SignInScreen} />
-          <Route path="/contact" component={ContactScreen} />
-          <Route path="/hire" component={() => <div>Hire</div>} />
-          <Route path="/findwork" component={() => <div>Findwork</div>} />
-          <Route path="/profile" component={() => <div>Profile</div>} />
-          <Route path="/settings" component={() => <div>Settings</div>} />
-          <Route path="/help" component={() => <div>Help</div>} />
-          <Route path="/logout" component={() => <div>Log out</div>} />
-        </Switch>
+        <main style={{ minHeight: '80vh' }}>
+          <Switch>
+            <Route path="/" component={LandingScreen} exact />
+            <Route path="/signin" component={SignInScreen} />
+            <Route path="/contact" component={ContactScreen} />
+            <Route path="/hire" component={() => <div>Hire</div>} />
+            <Route path="/findwork" component={() => <div>Findwork</div>} />
+            <Route path="/profile" component={() => <div>Profile</div>} />
+            <Route path="/settings" component={() => <div>Settings</div>} />
+            <Route path="/help" component={() => <div>Help</div>} />
+            <Route path="/logout" component={() => <div>Log out</div>} />
+          </Switch>
+        </main>
 
         <Footer />
       </ThemeProvider>
