@@ -3,12 +3,13 @@ import {
   AppBar,
   Toolbar,
   useScrollTrigger,
-  Container,
   ButtonGroup,
   Button,
   Avatar,
   Menu,
   MenuItem,
+  Hidden,
+  Box,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { Link } from 'react-router-dom';
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       cursor: 'pointer',
     },
+    marginLeft: '2em',
   },
   toolbar: {
     height: '3em',
@@ -56,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       cursor: 'pointer',
     },
+    marginRight: '2em',
   },
   menu: {},
 }));
@@ -90,19 +93,21 @@ const Header = () => {
 
   const buttons = (
     <React.Fragment>
-      <ButtonGroup
-        variant="text"
-        color="primary"
-        aria-label="text primary button group"
-        className={classes.buttonGroup}
-      >
-        <Button className={classes.button} component={Link} to="/findwork">
-          Find work
-        </Button>
-        <Button className={classes.button} component={Link} to="/hire">
-          Hire Photographer
-        </Button>
-      </ButtonGroup>
+      <Hidden xsDown>
+        <ButtonGroup
+          variant="text"
+          color="primary"
+          aria-label="text primary button group"
+          className={classes.buttonGroup}
+        >
+          <Button className={classes.button} component={Link} to="/findwork">
+            Find work
+          </Button>
+          <Button className={classes.button} component={Link} to="/hire">
+            Hire Photographer
+          </Button>
+        </ButtonGroup>
+      </Hidden>
       <Avatar
         aria-owns={anchorEl ? 'simple-menu' : undefined}
         aria-haspopup={anchorEl ? 'true' : undefined}
@@ -139,18 +144,12 @@ const Header = () => {
     <React.Fragment>
       <ElevationScroll>
         <AppBar position="fixed" color="inherit">
-          <Container>
-            <Toolbar disableGutters className={classes.toolbar}>
-              <Link to="/">
-                <img
-                  src={logohandwriting}
-                  className={classes.logo}
-                  alt="logo"
-                />
-              </Link>
-              {buttons}
-            </Toolbar>
-          </Container>
+          <Toolbar disableGutters className={classes.toolbar}>
+            <Link to="/">
+              <img src={logohandwriting} className={classes.logo} alt="logo" />
+            </Link>
+            {buttons}
+          </Toolbar>
         </AppBar>
       </ElevationScroll>
       <div className={classes.toolbarMargin} />
