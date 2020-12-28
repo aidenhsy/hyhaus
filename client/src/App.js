@@ -7,6 +7,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import LandingScreen from './screens/LandingScreen';
+import SignInScreen from './screens/SigninScreen';
+import ContactScreen from './screens/ContactScreen';
 
 const App = () => {
   return (
@@ -16,12 +18,14 @@ const App = () => {
 
         <Switch>
           <Route path="/" component={LandingScreen} exact />
-          <Route path="/hire" component={() => <div>Hire</div>} exact />
-          <Route path="/findwork" component={() => <div>Findwork</div>} exact />
-          <Route path="/profile" component={() => <div>Profile</div>} exact />
-          <Route path="/settings" component={() => <div>Settings</div>} exact />
-          <Route path="/help" component={() => <div>Help</div>} exact />
-          <Route path="/logout" component={() => <div>Log out</div>} exact />
+          <Route path="/signin" component={SignInScreen} />
+          <Route path="/contact" component={ContactScreen} />
+          <Route path="/hire" component={() => <div>Hire</div>} />
+          <Route path="/findwork" component={() => <div>Findwork</div>} />
+          <Route path="/profile" component={() => <div>Profile</div>} />
+          <Route path="/settings" component={() => <div>Settings</div>} />
+          <Route path="/help" component={() => <div>Help</div>} />
+          <Route path="/logout" component={() => <div>Log out</div>} />
         </Switch>
 
         <Footer />
