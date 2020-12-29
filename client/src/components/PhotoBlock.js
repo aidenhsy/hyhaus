@@ -20,27 +20,28 @@ const PhotoBlock = () => {
     fetchPhotos();
   }, []);
   return (
-    <Grid
-      container
-      spacing={4}
-      style={{
-        padding: matchesXS
-          ? undefined
-          : matchesSM
-          ? '2em 2em'
-          : matchesMD
-          ? '2em 4em'
-          : matchesLG
-          ? '2em 8em'
-          : '2em 12em',
-      }}
-    >
-      {photos.map((photo) => (
-        <Grid item xs={12} sm={6} md={4} lg={3} key={photo._id}>
-          <PhotoCard photo={photo} />
-        </Grid>
-      ))}
-    </Grid>
+    <React.Fragment>
+      <Grid
+        container
+        style={{
+          padding: matchesXS
+            ? '1em 1em'
+            : matchesSM
+            ? '2em 2em'
+            : matchesMD
+            ? '2em 4em'
+            : matchesLG
+            ? '2em 8em'
+            : '2em 12em',
+        }}
+      >
+        {photos.map((photo) => (
+          <Grid item xs={12} sm={6} md={4} lg={3} key={photo._id}>
+            <PhotoCard photo={photo} style={{ margin: '2px' }} />
+          </Grid>
+        ))}
+      </Grid>
+    </React.Fragment>
   );
 };
 
