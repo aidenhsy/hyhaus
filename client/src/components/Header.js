@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   AppBar,
   Toolbar,
-  useScrollTrigger,
   ButtonGroup,
   Button,
   Avatar,
@@ -61,18 +60,6 @@ const useStyles = makeStyles((theme) => ({
   },
   menu: {},
 }));
-
-function ElevationScroll(props) {
-  const { children } = props;
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-  });
-
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  });
-}
 
 const Header = () => {
   const classes = useStyles();
@@ -141,16 +128,14 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <ElevationScroll>
-        <AppBar position="fixed" color="inherit">
-          <Toolbar disableGutters className={classes.toolbar}>
-            <Link to="/">
-              <img src={logohandwriting} className={classes.logo} alt="logo" />
-            </Link>
-            {buttons}
-          </Toolbar>
-        </AppBar>
-      </ElevationScroll>
+      <AppBar position="absolute" color="inherit" elevation={0}>
+        <Toolbar disableGutters className={classes.toolbar}>
+          <Link to="/">
+            <img src={logohandwriting} className={classes.logo} alt="logo" />
+          </Link>
+          {buttons}
+        </Toolbar>
+      </AppBar>
       <div className={classes.toolbarMargin} />
     </React.Fragment>
   );
