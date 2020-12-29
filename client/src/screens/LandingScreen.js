@@ -16,6 +16,8 @@ const LandingScreen = () => {
     <Grid container direction="column" className={classes.mainContainer}>
       <Grid item>
         <MainBlock />
+      </Grid>
+      <Grid item>
         <PhotoBlock />
       </Grid>
     </Grid>

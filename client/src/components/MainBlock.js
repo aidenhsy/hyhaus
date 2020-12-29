@@ -57,7 +57,13 @@ const MainBlock = () => {
         <Typography variant="h4" className={classes.title}>
           Discover China's top photographers
         </Typography>
-        <Typography variant="subtitle1" style={{ marginBottom: '1.4rem' }}>
+        <Typography
+          variant="subtitle1"
+          style={{
+            marginBottom: '1.4rem',
+            padding: matchesSM ? '1em' : undefined,
+          }}
+        >
           Hyhaus is the leading destination to find & showcase photographies and
           home to the China's best photographers.
         </Typography>

@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import LandingScreen from './screens/LandingScreen';
 import SignInScreen from './screens/SigninScreen';
 import ContactScreen from './screens/ContactScreen';
+import TestingScreen from './screens/TestingScreen';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/" component={LandingScreen} exact />
             <Route path="/signin" component={SignInScreen} />
             <Route path="/contact" component={ContactScreen} />
+            <Route path="/test" component={TestingScreen} />
             <Route path="/hire" component={() => <div>Hire</div>} />
             <Route path="/findwork" component={() => <div>Findwork</div>} />
             <Route path="/profile" component={() => <div>Profile</div>} />
